@@ -1,0 +1,28 @@
+{
+  "name": "micro-tpl-loader",
+  "version": "0.0.0",
+  "description": "Micro mustache template loader for webpack",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Eric Chen",
+    "email": "airkro@qq.com"
+  },
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "keywords": [
+    "tpl",
+    "webpack",
+    "mustache",
+    "template",
+    "html",
+    "handlebars",
+    "barbe"
+  ],
+  "dependencies": {
+    "loader-utils": "^1.2.3",
+    "micromustache": "^5.4.0",
+    "schema-utils": "^1.0.0"
+  }
+}
