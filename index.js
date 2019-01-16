@@ -1,6 +1,5 @@
 const { getOptions } = require('loader-utils');
 const validateOptions = require('schema-utils');
-const { render } = require('micromustache');
 
 const schema = {
   type: 'object',
@@ -21,15 +20,10 @@ module.exports = function loader(source) {
 
   validateOptions(schema, options, 'Micro tpl Loader');
 
-  let template = source;
-
-  if (options.params) {
-    template = render(source, options.params);
-  }
-
   return `
   module.exports = function render(templateParams={}) {
     const { render } = require('micromustache');
-    return render(\`${template}\`,templateParams);
+    const data = ${JSON.stringify(options.params)};
+    return render(\`${source}\`, { ...data, ...templateParams });
   }`;
 };

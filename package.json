@@ -1,12 +1,16 @@
 {
   "name": "micro-tpl-loader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Micro mustache template loader for webpack",
   "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
     "email": "airkro@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Airkro/micro-tpl-loader"
   },
   "engines": {
     "node": ">=8.3.0"
