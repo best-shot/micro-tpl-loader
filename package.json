@@ -1,32 +1,56 @@
 {
   "name": "micro-tpl-loader",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Micro mustache template loader for webpack",
-  "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Eric Chen",
     "email": "airkro@qq.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Airkro/micro-tpl-loader"
-  },
-  "engines": {
-    "node": ">=8.3.0"
-  },
   "keywords": [
-    "tpl",
-    "webpack",
+    "handlebars",
+    "html",
     "mustache",
     "template",
-    "html",
-    "handlebars",
-    "barbe"
+    "tpl",
+    "webpack"
   ],
+  "homepage": "https://github.com/airkro/micro-tpl-loader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airkro/micro-tpl-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/airkro/micro-tpl-loader/issues"
+  },
+  "main": "index.cjs",
+  "scripts": {
+    "lint": "nice-move lint",
+    "prepare": "git config core.hooksPath .githooks"
+  },
   "dependencies": {
-    "loader-utils": "^1.2.3",
-    "micromustache": "^5.4.0",
-    "schema-utils": "^1.0.0"
-  }
+    "micromustache": "^8.0.3"
+  },
+  "devDependencies": {
+    "@nice-move/cli": "^0.6.0",
+    "@nice-move/eslint-config-base": "^0.5.75",
+    "@nice-move/prettier-config": "^0.5.1",
+    "eslint": "^7.32.0",
+    "garou": "^0.3.4",
+    "prettier": "^2.5.1"
+  },
+  "peerDependencies": {
+    "webpack": "^5.0.0"
+  },
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "eslintConfig": {
+    "extends": "@nice-move/eslint-config-base"
+  },
+  "prettier": "@nice-move/prettier-config"
 }

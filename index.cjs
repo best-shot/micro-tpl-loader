@@ -1,14 +1,13 @@
-const { getOptions } = require('loader-utils');
-const validateOptions = require('schema-utils');
+'use strict';
 
 const schema = {
   type: 'object',
   additionalProperties: false,
   properties: {
     params: {
-      type: 'object'
-    }
-  }
+      type: 'object',
+    },
+  },
 };
 
 module.exports = function loader(source) {
@@ -16,12 +15,10 @@ module.exports = function loader(source) {
     this.cacheable();
   }
 
-  const options = getOptions(this) || {};
-
-  validateOptions(schema, options, 'Micro tpl Loader');
+  const options = this.getOptions(schema) || {};
 
   return `
-  module.exports = function render(templateParams={}) {
+  export default function render(templateParams={}) {
     const { render } = require('micromustache');
     const data = ${JSON.stringify(options.params)};
     return render(\`${source}\`, { ...data, ...templateParams });
